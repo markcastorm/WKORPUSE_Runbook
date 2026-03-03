@@ -1,0 +1,464 @@
+<meta http-equiv='Content-Type' content='application/vns.ms-execel; charset=euc-kr'></meta>
+<style>td { mso-number-format:\@; } </style> 
+<table border='1' width='800px'>
+<tr>
+<th style="height:30px;text-align:center" or_wd="41" >순위</th>
+<th style="height:30px;text-align:center" or_wd="110" >국가</th>
+<th style="height:30px;text-align:center" or_wd="135" >종목코드</th>
+<th style="height:30px;text-align:center" or_wd="289" >종목명</th>
+<th style="height:30px;text-align:center" or_wd="111" >매수결제</th>
+<th style="height:30px;text-align:center" or_wd="110" >매도결제</th>
+<th style="height:30px;text-align:center" or_wd="109" >순매수결제</th>
+</tr>
+</tr>
+<tr>
+<td>1</td>
+<td>미국</td>
+<td>US5951121038</td>
+<td>MICRON TECHNOLOGY INC</td>
+<td>44060511</td>
+<td>13903519</td>
+<td>30156992</td>
+</tr>
+<tr>
+<td>2</td>
+<td>미국</td>
+<td>US25460G2865</td>
+<td>DIREXION DAILY TSLA BULL 2X SHARES</td>
+<td>45323354</td>
+<td>15369582</td>
+<td>29953772</td>
+</tr>
+<tr>
+<td>3</td>
+<td>미국</td>
+<td>US88160R1014</td>
+<td>TESLA INC</td>
+<td>71492119</td>
+<td>41980340</td>
+<td>29511778</td>
+</tr>
+<tr>
+<td>4</td>
+<td>미국</td>
+<td>US02079K3059</td>
+<td>ALPHABET INC CL A</td>
+<td>42327673</td>
+<td>13464514</td>
+<td>28863159</td>
+</tr>
+<tr>
+<td>5</td>
+<td>미국</td>
+<td>US78463V1070</td>
+<td>SPDR GOLD SHARES ETF</td>
+<td>24291902</td>
+<td>2611786</td>
+<td>21680117</td>
+</tr>
+<tr>
+<td>6</td>
+<td>미국</td>
+<td>US46428Q1094</td>
+<td>ISHARES SILVER TRUST ETF</td>
+<td>38520454</td>
+<td>18249931</td>
+<td>20270523</td>
+</tr>
+<tr>
+<td>7</td>
+<td>미국</td>
+<td>US5949181045</td>
+<td>MICROSOFT CORP</td>
+<td>25882301</td>
+<td>7710841</td>
+<td>18171460</td>
+</tr>
+<tr>
+<td>8</td>
+<td>미국</td>
+<td>US25461A4452</td>
+<td>DIREXION DAILY PLTR BULL 2X SHARES</td>
+<td>16965457</td>
+<td>1679463</td>
+<td>15285994</td>
+</tr>
+<tr>
+<td>9</td>
+<td>미국</td>
+<td>US0231351067</td>
+<td>AMAZON.COM INC</td>
+<td>20692006</td>
+<td>5940390</td>
+<td>14751615</td>
+</tr>
+<tr>
+<td>10</td>
+<td>미국</td>
+<td>US21873S1087</td>
+<td>CoreWeave Inc</td>
+<td>18111158</td>
+<td>4759191</td>
+<td>13351967</td>
+</tr>
+<tr>
+<td>11</td>
+<td>미국</td>
+<td>US75776W1036</td>
+<td>REDWIRE CORP EXOF 008516579 KYG382451170</td>
+<td>16288299</td>
+<td>2997227</td>
+<td>13291072</td>
+</tr>
+<tr>
+<td>12</td>
+<td>미국</td>
+<td>US0937121079</td>
+<td>BLOOM ENERGY CORP CL A</td>
+<td>16135131</td>
+<td>2977971</td>
+<td>13157160</td>
+</tr>
+<tr>
+<td>13</td>
+<td>미국</td>
+<td>US44812J1043</td>
+<td>HUT 8 CORP</td>
+<td>12704473</td>
+<td>83044</td>
+<td>12621429</td>
+</tr>
+<tr>
+<td>14</td>
+<td>미국</td>
+<td>US65290E1010</td>
+<td>NEXTRACKER INC</td>
+<td>12673687</td>
+<td>185141</td>
+<td>12488546</td>
+</tr>
+<tr>
+<td>15</td>
+<td>미국</td>
+<td>US9229083632</td>
+<td>VANGUARD SP 500 ETF SPLR 39326002188 US9229084135</td>
+<td>14215341</td>
+<td>2912012</td>
+<td>11303329</td>
+</tr>
+<tr>
+<td>16</td>
+<td>미국</td>
+<td>US4642875235</td>
+<td>ISHARES SEMICONDUCTOR ETF</td>
+<td>13793460</td>
+<td>3251561</td>
+<td>10541898</td>
+</tr>
+<tr>
+<td>17</td>
+<td>미국</td>
+<td>US25461A5285</td>
+<td>DXN MU BUL2X ETF</td>
+<td>13557227</td>
+<td>3425355</td>
+<td>10131871</td>
+</tr>
+<tr>
+<td>18</td>
+<td>미국</td>
+<td>US22266T1097</td>
+<td>COUPANG INC</td>
+<td>10965450</td>
+<td>924263</td>
+<td>10041186</td>
+</tr>
+<tr>
+<td>19</td>
+<td>미국</td>
+<td>CA13321L1085</td>
+<td>CAMECO CORP</td>
+<td>9987430</td>
+<td>503344</td>
+<td>9484087</td>
+</tr>
+<tr>
+<td>20</td>
+<td>미국</td>
+<td>US91324P1021</td>
+<td>UNITEDHEALTH GROUP INC</td>
+<td>17469851</td>
+<td>7986543</td>
+<td>9483309</td>
+</tr>
+<tr>
+<td>21</td>
+<td>미국</td>
+<td>KYG651631007</td>
+<td>JOBY AVIATION INC EXOF 008448244 KYG7483N1117</td>
+<td>11960455</td>
+<td>2626649</td>
+<td>9333806</td>
+</tr>
+<tr>
+<td>22</td>
+<td>미국</td>
+<td>US46138G6492</td>
+<td>INVESCO NASDAQ 100 ETF</td>
+<td>10813056</td>
+<td>2545479</td>
+<td>8267578</td>
+</tr>
+<tr>
+<td>23</td>
+<td>미국</td>
+<td>US4642852044</td>
+<td>ISHARES GOLD TRUST SPLR 007985653 US4642851053</td>
+<td>9288768</td>
+<td>1023822</td>
+<td>8264946</td>
+</tr>
+<tr>
+<td>24</td>
+<td>미국</td>
+<td>US98149E3036</td>
+<td>SPDR GOLD MINISHARES TRUST ETF SPLR 008981461 US98149E2046</td>
+<td>8666446</td>
+<td>617300</td>
+<td>8049146</td>
+</tr>
+<tr>
+<td>25</td>
+<td>미국</td>
+<td>US25461A3876</td>
+<td>DIREXION SHARES ETF TRUST DAILY MSCI SOUTH KOREA BULL SPLR 970211833 US25459Y5208</td>
+<td>9105241</td>
+<td>1666226</td>
+<td>7439014</td>
+</tr>
+<tr>
+<td>26</td>
+<td>미국</td>
+<td>US0320951017</td>
+<td>AMPHENOL CORP CL A</td>
+<td>7532776</td>
+<td>466311</td>
+<td>7066466</td>
+</tr>
+<tr>
+<td>27</td>
+<td>미국</td>
+<td>US25460G1123</td>
+<td>DIREXION SEMICONDUCTOR BEAR 3X ETF</td>
+<td>14590736</td>
+<td>7606194</td>
+<td>6984542</td>
+</tr>
+<tr>
+<td>28</td>
+<td>미국</td>
+<td>USN070592100</td>
+<td>ASML HOLDING NV ADR</td>
+<td>9117288</td>
+<td>2509038</td>
+<td>6608251</td>
+</tr>
+<tr>
+<td>29</td>
+<td>미국</td>
+<td>US80004C2008</td>
+<td>SNDSK CRP ORD WI</td>
+<td>12893978</td>
+<td>6616688</td>
+<td>6277290</td>
+</tr>
+<tr>
+<td>30</td>
+<td>미국</td>
+<td>US92189F6768</td>
+<td>VANECK SEMICONDUCTOR ETF CHAN 39610601171 US57060U2336</td>
+<td>9696902</td>
+<td>3587664</td>
+<td>6109238</td>
+</tr>
+<tr>
+<td>31</td>
+<td>미국</td>
+<td>US55024U1097</td>
+<td>LUMENTUM HOLDINGS INC SOFF 39520207144 US46612J5074</td>
+<td>7147394</td>
+<td>1122878</td>
+<td>6024516</td>
+</tr>
+<tr>
+<td>32</td>
+<td>미국</td>
+<td>US2988922090</td>
+<td>EVA LIVE INC</td>
+<td>5888446</td>
+<td>4960</td>
+<td>5883486</td>
+</tr>
+<tr>
+<td>33</td>
+<td>미국</td>
+<td>US8085247976</td>
+<td>SCHWAB US DIVIDEND EQUITY ETF</td>
+<td>6679455</td>
+<td>1498494</td>
+<td>5180961</td>
+</tr>
+<tr>
+<td>34</td>
+<td>미국</td>
+<td>US92189H3003</td>
+<td>VANECK JP MORGAN EM LOCAL CURRENCY BOND ETF</td>
+<td>5060175</td>
+<td>48949</td>
+<td>5011226</td>
+</tr>
+<tr>
+<td>35</td>
+<td>미국</td>
+<td>US83422N1054</td>
+<td>SOLID POWER INC</td>
+<td>5635472</td>
+<td>686950</td>
+<td>4948522</td>
+</tr>
+<tr>
+<td>36</td>
+<td>미국</td>
+<td>US0378331005</td>
+<td>APPLE INC</td>
+<td>8597412</td>
+<td>3806113</td>
+<td>4791300</td>
+</tr>
+<tr>
+<td>37</td>
+<td>미국</td>
+<td>US38747R7109</td>
+<td>GNTSH 2XPLTR ETF</td>
+<td>5708877</td>
+<td>960266</td>
+<td>4748611</td>
+</tr>
+<tr>
+<td>38</td>
+<td>미국</td>
+<td>US9581021055</td>
+<td>WESTERN DIGITAL CORP</td>
+<td>5728856</td>
+<td>1043098</td>
+<td>4685758</td>
+</tr>
+<tr>
+<td>39</td>
+<td>미국</td>
+<td>US68236H2040</td>
+<td>ONDAS HOLDINGS INC</td>
+<td>5179255</td>
+<td>758855</td>
+<td>4420401</td>
+</tr>
+<tr>
+<td>40</td>
+<td>미국</td>
+<td>US18915M1071</td>
+<td>CLOUDFLARE INC</td>
+<td>6083888</td>
+<td>1674365</td>
+<td>4409523</td>
+</tr>
+<tr>
+<td>41</td>
+<td>미국</td>
+<td>US02156V1098</td>
+<td>ALTC ACQUISITION CORP</td>
+<td>7898786</td>
+<td>3576370</td>
+<td>4322416</td>
+</tr>
+<tr>
+<td>42</td>
+<td>미국</td>
+<td>US46654Q2030</td>
+<td>J.P. MORGAN NASDAQ EQUITY PREMIUM INCOME ETF</td>
+<td>5079994</td>
+<td>917884</td>
+<td>4162110</td>
+</tr>
+<tr>
+<td>43</td>
+<td>미국</td>
+<td>US1049322076</td>
+<td>BRAND ENGAGEMENT NETWORK IN COM USD0.0001(PST RV SPT) SPLR 987177411 US1049321086</td>
+<td>5193275</td>
+<td>1145022</td>
+<td>4048253</td>
+</tr>
+<tr>
+<td>44</td>
+<td>미국</td>
+<td>US8807701029</td>
+<td>TERADYNE INC</td>
+<td>4172632</td>
+<td>257800</td>
+<td>3914832</td>
+</tr>
+<tr>
+<td>45</td>
+<td>미국</td>
+<td>US1442851036</td>
+<td>CARPENTER TECHNOLOGY CORP</td>
+<td>3956003</td>
+<td>58982</td>
+<td>3897021</td>
+</tr>
+<tr>
+<td>46</td>
+<td>미국</td>
+<td>US00217D1000</td>
+<td>AST SPACEMOBILE INC CL A EXOF 008072919 US64822P2056</td>
+<td>6937045</td>
+<td>3061689</td>
+<td>3875356</td>
+</tr>
+<tr>
+<td>47</td>
+<td>미국</td>
+<td>US88023B1035</td>
+<td>Tempus AI Inc</td>
+<td>6033479</td>
+<td>2170315</td>
+<td>3863164</td>
+</tr>
+<tr>
+<td>48</td>
+<td>미국</td>
+<td>US5949724083</td>
+<td>MICROSTRATEGY INC CL A</td>
+<td>4395028</td>
+<td>666498</td>
+<td>3728529</td>
+</tr>
+<tr>
+<td>49</td>
+<td>미국</td>
+<td>US25461A8669</td>
+<td>DIREXION DAILY MSFT BULL 1 5X ETF</td>
+<td>5206365</td>
+<td>1513074</td>
+<td>3693291</td>
+</tr>
+<tr>
+<td>50</td>
+<td>미국</td>
+<td>US38747R8016</td>
+<td>GRNTSHR 2X ETF</td>
+<td>3785908</td>
+<td>228595</td>
+<td>3557313</td>
+</tr>
+</table>

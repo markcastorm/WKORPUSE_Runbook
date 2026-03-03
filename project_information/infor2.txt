@@ -1,0 +1,66 @@
+i notiedc some thing we are missing (MarkCastro@DESKTOP-UP05FK7 MINGW64 /d/Projects/SIMBA-RUNBOOKS/WKORPUSE_Runbook
+$ python orchestrator.py 
+2026-02-02 12:37:24 - root - INFO - ============================================================
+2026-02-02 12:37:24 - root - INFO - WKORPUSE Runbook - Logging initialized
+2026-02-02 12:37:24 - root - INFO - Log file: ./logs\20260202_123723\wkorpuse_20260202_123723.log
+2026-02-02 12:37:24 - root - INFO - Log level: DEBUG
+2026-02-02 12:37:24 - root - INFO - Run timestamp: 20260202_123723
+2026-02-02 12:37:24 - root - INFO - Data date: 20260130
+2026-02-02 12:37:24 - root - INFO - ============================================================
+
+======================================================================
+ WKORPUSE - KSD Korea Securities Depository Data Collection
+ Weekdaily KOR Purchase of US Equities
+======================================================================
+
+Configuration:
+----------------------------------------------------------------------
+  Data Date: 20260130 (Friday, January 30, 2026)
+  Source: https://seibro.or.kr/websquare/control.jsp?w2xPath=/IPORTAL/...
+  Output: ./output\20260202_123723
+  Downloads: ./downloads\20260202_123723
+  Run Timestamp: 20260202_123723
+----------------------------------------------------------------------
+
+STEP 1: Downloading data from SEIBro
+======================================================================
+
+DevTools listening on ws://127.0.0.1:63174/devtools/browser/3403d330-7bde-4dba-870b-24d30721491c
+2026-02-02 12:37:26 - scraper - INFO - Chrome driver initialized
+2026-02-02 12:37:26 - scraper - INFO - Download directory: D:\Projects\SIMBA-RUNBOOKS\WKORPUSE_Runbook\downloads\20260202_123723
+2026-02-02 12:37:26 - scraper - INFO - Navigating to https://seibro.or.kr/websquare/control.jsp?w2xPath=/IPORTAL/user/ovsSec/BIP_CNTS10013V.xml&menuNo=921
+2026-02-02 12:37:34 - scraper - INFO - Page loaded successfully
+
+============================================================
+Configuring filters for date: 20260130
+============================================================
+
+2026-02-02 12:37:34 - scraper - INFO - Setting filter: 결제금액 (Settlement Amount)
+[12712:5256:0202/123746.114:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[12712:5256:0202/123746.603:ERROR:google_apis\gcm\engine\mcs_client.cc:700]   Error code: 401  Error message: Authentication Failed: wrong_secret
+[12712:5256:0202/123746.605:ERROR:google_apis\gcm\engine\mcs_client.cc:702] Failed to log in to GCM, resetting connection.
+2026-02-02 12:37:47 - scraper - DEBUG - JS clicked 결제금액 radio
+2026-02-02 12:37:48 - scraper - INFO - Setting filter: 순매수결제 (Net Purchase Settlement)
+2026-02-02 12:37:49 - scraper - DEBUG - Clicked 순매수결제 radio
+2026-02-02 12:37:50 - scraper - INFO - Setting date range: 2026/01/30
+2026-02-02 12:37:50 - scraper - DEBUG - Start date set to: 2026/01/30
+2026-02-02 12:37:50 - scraper - DEBUG - End date set to: 2026/01/30
+2026-02-02 12:37:50 - scraper - INFO - Date range set to: 2026/01/30
+2026-02-02 12:37:50 - scraper - INFO - Setting filter: 미국 (USA)
+Created TensorFlow Lite XNNPACK delegate for CPU.
+2026-02-02 12:37:51 - scraper - DEBUG - Clicked 미국 radio
+2026-02-02 12:37:51 - scraper - INFO - Clicking search button (조회)
+2026-02-02 12:37:52 - scraper - DEBUG - Clicked 조회 button (image)
+2026-02-02 12:37:57 - scraper - INFO - Search executed, waiting for results...
+
+Waiting for data to load...
+2026-02-02 12:37:57 - scraper - INFO - Waiting for data table to load...
+2026-02-02 12:37:57 - scraper - INFO - Data table loaded with 109 rows
+
+============================================================
+Downloading Excel file...
+============================================================
+
+2026-02-02 12:38:00 - scraper - INFO - Clicking Excel download button (엑셀다운로드)
+2026-02-02 12:38:01 - scraper - DEBUG - Clicked 엑셀다운로드 button
+2026-02-02 12:38:01 - scraper - INFO - Waiting for download to complete (timeout: 30s)) we are not selecting the drop down why we are supposed to select this (<option>1주</option>) this element (<div id="sd1_selectbox1" class="w2selectbox_native fixedWidth selectbox1 m_left10" aria-hidden="false" style="display: block; visibility: visible;"><div class="w2selectbox_native_innerDiv"><select class="w2selectbox_native_select" id="sd1_selectbox1_input_0" title="조회기간을 선택하세요"><option>1주</option><option>1개월</option><option>3개월</option><option>6개월</option><option>1년</option></select></div></div>)
