@@ -3,6 +3,7 @@
 
 import os
 import logging
+from io import StringIO
 import pandas as pd
 import xlrd
 import config
@@ -69,7 +70,7 @@ class SEIBroParser:
                 html_content = f.read()
 
             # Parse all tables in the HTML
-            tables = pd.read_html(html_content, encoding='utf-8')
+            tables = pd.read_html(StringIO(html_content))
 
             if not tables:
                 self.logger.error("No tables found in HTML")
@@ -90,7 +91,7 @@ class SEIBroParser:
                 with open(file_path, 'r', encoding='euc-kr') as f:
                     html_content = f.read()
 
-                tables = pd.read_html(html_content)
+                tables = pd.read_html(StringIO(html_content))
                 if tables:
                     largest_table = max(tables, key=lambda x: len(x))
                     return largest_table
@@ -278,6 +279,13 @@ class SEIBroParser:
 
         # Create a copy to avoid modifying original
         cleaned_df = df.copy()
+
+        # Drop columns not in the expected output (e.g. 매수+매도결제)
+        expected_columns = [col['korean'] for col in config.OUTPUT_COLUMNS]
+        extra_columns = [c for c in cleaned_df.columns if c not in expected_columns]
+        if extra_columns:
+            self.logger.info(f"Dropping extra columns: {extra_columns}")
+            cleaned_df = cleaned_df.drop(columns=extra_columns)
 
         # Process each column based on expected type
         for col_info in config.OUTPUT_COLUMNS:

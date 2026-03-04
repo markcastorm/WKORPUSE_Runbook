@@ -102,8 +102,9 @@ SELECTORS = {
     # Excel download button
     'excel_download': 'a#ExcelDownload_a',  # 엑셀다운로드 button
 
-    # Data table (grid)
-    'data_table': 'div#grid1',
+    # Data table (grid2 is the visible table, grid1 is hidden)
+    'data_table': 'div#grid2',
+    'data_table_body': 'table#grid2_body_table',
     'table_body': 'tbody',
     'table_rows': 'tr',
 }

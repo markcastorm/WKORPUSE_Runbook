@@ -349,17 +349,17 @@ class SEIBroDownloader:
             return False
 
     def wait_for_data_table(self, timeout=15):
-        """Wait for data table to load with data"""
+        """Wait for data table (grid2) to load with data"""
 
         self.logger.info("Waiting for data table to load...")
 
         try:
-            # Wait for the grid/table to have rows
+            # Wait for grid2 (the visible table) to have rows
             start_time = time.time()
             while time.time() - start_time < timeout:
                 try:
-                    # Check if table has data rows
-                    rows = self.driver.find_elements(By.CSS_SELECTOR, "div#grid1 tbody tr, table tbody tr")
+                    # grid2 is the visible data table, grid1 is hidden
+                    rows = self.driver.find_elements(By.CSS_SELECTOR, "div#grid2 tbody tr")
                     if rows and len(rows) > 0:
                         self.logger.info(f"Data table loaded with {len(rows)} rows")
                         return True
@@ -388,70 +388,52 @@ class SEIBroDownloader:
         except:
             return False
 
-    def wait_for_download_complete(self, timeout=None):
-        """Wait for download to complete by checking for .xls file"""
+    def extract_table_data(self):
+        """
+        Extract data directly from the visible data table (grid2) on the page.
+        Saves the table as an HTML file for the parser to process.
 
-        if timeout is None:
-            timeout = config.DOWNLOAD_WAIT_TIME
+        Returns:
+            Path to saved HTML file, or None if failed
+        """
 
-        self.logger.info(f"Waiting for download to complete (timeout: {timeout}s)")
-
-        start_time = time.time()
-
-        while time.time() - start_time < timeout:
-            # Check for .xls files (not .crdownload)
-            xls_files = glob.glob(os.path.join(self.download_dir, "*.xls"))
-            # Filter out temporary download files
-            complete_files = [f for f in xls_files if not f.endswith('.crdownload')]
-
-            if complete_files:
-                # Get the most recent file
-                latest_file = max(complete_files, key=os.path.getctime)
-                self.logger.info(f"Download complete: {os.path.basename(latest_file)}")
-                return latest_file
-
-            time.sleep(1)
-
-        self.logger.error("Download timeout - no .xls file found")
-        return None
-
-    def download_excel(self):
-        """Click the Excel download button - with human-like delay"""
-
-        self.logger.info("Clicking Excel download button (엑셀다운로드)")
+        self.logger.info("Extracting data from page table (grid2)...")
 
         try:
-            # Clear any existing files in download dir first
-            existing_files = glob.glob(os.path.join(self.download_dir, "*.xls"))
-            for f in existing_files:
-                try:
-                    os.remove(f)
-                except:
-                    pass
+            # Get the table HTML from grid2 (the visible data table)
+            # grid1 is hidden (display:none), grid2 is the actual visible table
+            table_html = self.driver.execute_script("""
+                var table = document.querySelector('table#grid2_body_table');
+                if (!table) {
+                    table = document.querySelector('div#grid2 table');
+                }
+                return table ? table.outerHTML : null;
+            """)
 
-            # Add human delay before clicking download button
-            # Simulate user scrolling/reviewing results before downloading
-            self.logger.debug("Waiting before download (simulating human review)...")
-            human_delay(1.0, 2.0)
+            if not table_html:
+                self.logger.error("No data table found in grid2")
+                return None
 
-            download_btn = self.wait_for_clickable(config.SELECTORS['excel_download'])
-            if download_btn:
-                self.click_element_safely(download_btn, "엑셀다운로드 button")
+            # Count rows for logging
+            row_count = table_html.count('<tr id="row13"')
+            self.logger.info(f"Extracted table with {row_count} data rows")
 
-                # Wait for download to complete
-                downloaded_file = self.wait_for_download_complete()
-                return downloaded_file
+            # Wrap in basic HTML structure
+            html_content = f"""<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+{table_html}"""
 
-            # Fallback: try executing the JavaScript function directly
-            self.logger.info("Trying fallback: JavaScript doExcelDown")
-            self.driver.execute_script("doExcelDown();")
+            # Save to download directory as .xls (HTML format)
+            output_filename = "주요국 외화주식 예탁결제현황.xls"
+            output_path = os.path.join(self.download_dir, output_filename)
 
-            # Wait for download to complete
-            downloaded_file = self.wait_for_download_complete()
-            return downloaded_file
+            with open(output_path, 'w', encoding='utf-8') as f:
+                f.write(html_content)
+
+            self.logger.info(f"Table data extracted and saved: {output_filename}")
+            return output_path
 
         except Exception as e:
-            self.logger.error(f"Error downloading Excel: {e}")
+            self.logger.error(f"Error extracting table data: {e}")
             return None
 
     def download_data(self):
@@ -505,15 +487,19 @@ class SEIBroDownloader:
             # Dismiss any alerts that might block download
             self.dismiss_alerts()
 
-            # Step 8: Download Excel
+            # Step 8: Extract data from table
             print("\n" + "=" * 60)
-            print("Downloading Excel file...")
+            print("Extracting data from table...")
             print("=" * 60 + "\n")
 
-            downloaded_file = self.download_excel()
+            downloaded_file = self.extract_table_data()
 
             if downloaded_file:
-                print(f"[SUCCESS] Downloaded: {os.path.basename(downloaded_file)}")
+                # Use ascii-safe filename for console output (Korean chars can't print on Windows cp1252)
+                try:
+                    print(f"[SUCCESS] Downloaded: {os.path.basename(downloaded_file)}")
+                except UnicodeEncodeError:
+                    print(f"[SUCCESS] Downloaded: {os.path.basename(downloaded_file).encode('ascii', 'replace').decode()}")
                 self.logger.info(f"Successfully downloaded: {downloaded_file}")
 
                 return {

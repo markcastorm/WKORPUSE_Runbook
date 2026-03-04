@@ -4,7 +4,14 @@
 
 import os
 import sys
+import io
 from datetime import datetime
+
+# Fix Windows console encoding for Korean characters
+if sys.stdout.encoding != 'utf-8':
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
+
 import config
 from logger_setup import setup_logging
 from scraper import SEIBroDownloader
